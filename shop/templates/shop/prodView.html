@@ -1,0 +1,37 @@
+{% extends 'shop/layout.html' %}
+<!--title-->
+{% block title %} Product View - {{product.product_name}} {% endblock %}
+{% block css %}
+    .prod_image{
+        border:1px solid red;
+        max-width:300px;
+    }
+    .prod_image > img{
+        box-shadow:0 0 5px 0 #555;
+        height:auto;
+        margin-bottom:15px;
+        width:100%;
+    }
+{% endblock %}
+<!--body-->
+{% block body %}
+<!--    product view main content section-->
+    <section class="pt-4 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 prod_image">
+                    <img src="/media/{{product.image}}" alt="{{product.image}}">
+                    <div class="col text-center">
+                        <button class="btn btn-primary">Buy Now</button>
+                        <button class="btn btn-primary">Add To Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h5 class="text-capitalize">{{product.product_name}}</h5>
+                    <p><b>Rs. {{product.price}}</b></p>
+                    <p>{{product.product_desc}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'shop/layout.html' %}
+<!-- title -->
+{% block title %} Payment Status {% endblock %}  
+<!-- body -->
+{% block body %}
+{{response}}
+    <section class="pt-4 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Payment status regarding your order Id {{response.ORDERID}}</h1>
+                    {% if response.RESPCODE == '01' %}
+                        ORDER SUCCESS...
+                    {% else %}
+                        ORDER FAILURE
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
